@@ -4,18 +4,36 @@
 // NOTE: In this assessment you will NOT be running a react file structure
 
 // 1. Write a React component that prints "I am a component!" Be sure to include all necessary imports, exports, etc.
+import React, {component} from 'react'
 
+class SayIt{
+  
+  
+  render(){
+    return(
+      <h1> "I am a component!" </h1>
+    )
+  }
+  
+  
+  
+}
 
-
+export default SayIt
 
 
 // 2. Refactor this vanilla javascript loop to a map function. The output should remain the same.
 
 var names = ["Ford Prefect", "Arthur Dent", "Trillian", "Zaphod", "Vogon", "Marvin, the Paranoid Android"]
 
-for(let i=0; i<names.length; i++){
-  console.log(`${names[i]} is ${names[i].length} characters long.`)
-}
+// for(let i=0; i<names.length; i++){
+//   console.log(`${names[i]} is ${names[i].length} characters long.`)
+// }
+
+var sameNames = names.map(justNames => {
+  return justNames
+})
+console.log(sameNames)
 
 
 
@@ -27,6 +45,9 @@ this.state = {
   dislikes: ["mirrors", "garlic", "wooden stakes"]
 }
 
+var {name: "Dracula"} = this.state
+var {home: "Transylvania"} = this.state
+var {dislikes: ["mirrors", "garlic", "wooden stakes"]} = this.state
 
 
 // 4. Write a React method that would add one and update the state of the count each time the method is called.
@@ -34,6 +55,11 @@ this.state = {
 this.state = {
   count: 0
 }
+
+handleClick = () => {
+    this.setState(({ count }) => ({
+      count: count + 1
+    }));
 
 
 
